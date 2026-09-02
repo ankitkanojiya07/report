@@ -1,0 +1,184 @@
+/* Header Component Styles */
+.dashboard-header {
+  background: linear-gradient(135deg, #00bf63, #00a855);
+  color: white;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 50px;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.welcome-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.logout-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.logout-button:hover {
+  background: white;
+  color: #00bf63;
+  border-color: white;
+  transform: translateY(-1px);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+}
+
+/* Additional Dashboard Styles */
+.dashboard-body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: white;
+  color: #333;
+}
+
+.dashboard-card {
+  background: white;
+  border: 2px solid #00bf63;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 191, 99, 0.1);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.dashboard-button {
+  background: #00bf63;
+  color: white;
+  border: 2px solid #00bf63;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dashboard-button:hover {
+  background: white;
+  color: #00bf63;
+  transform: translateY(-1px);
+}
+
+.dashboard-button.secondary {
+  background: white;
+  color: #00bf63;
+}
+
+.dashboard-button.secondary:hover {
+  background: #00bf63;
+  color: white;
+}
+
+.dashboard-title {
+  color: #00bf63;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.dashboard-text {
+  color: #333;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.6;
+}
+
+.dashboard-accent {
+  color: #00bf63;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .header-title {
+    font-size: 1.25rem;
+  }
+
+  .user-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .welcome-text {
+    font-size: 0.8rem;
+  }
+
+  .dashboard-card {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 0 0.5rem;
+  }
+
+  .header-title {
+    font-size: 1.1rem;
+  }
+
+  .logout-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .dashboard-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.875rem;
+  }
+}

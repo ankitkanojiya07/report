@@ -1,0 +1,1057 @@
+/* Invoice Generator Styles */
+.invoice-generator {
+    position: relative;
+}
+
+.pdf-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.pdf-button:hover {
+    background-color: #2980b9;
+}
+
+.pdf-button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px;
+    width: 90%;
+    max-width: 550px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.modal-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.report-date-filters {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.report-date-filters h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #34495e;
+    font-size: 1.1rem;
+}
+
+.date-inputs {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.date-input-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.date-input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.date-input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancel-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.cancel-button:hover {
+    background-color: #c0392b;
+}
+
+.submit-button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #27ae60;
+}
+
+/* Loading indicator */
+.loading-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 100;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-left-color: #3498db;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* PDF Preview specific styles */
+.pdf-preview {
+    max-width: 800px;
+    width: 90%;
+}
+
+.pdf-container {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-header {
+    margin-bottom: 30px;
+}
+
+.company-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.company-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.company-info p {
+    margin: 3px 0;
+    font-size: 12px;
+    color: #555;
+}
+
+.invoice-title {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 24px;
+    margin: 15px 0;
+    position: relative;
+}
+
+.invoice-title:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #3498db;
+    margin: 10px auto 0;
+}
+
+.invoice-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.invoice-meta p,
+.supplier-info p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+.invoice-items h3 {
+    color: #3498db;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eee;
+}
+
+/* Adjustment inputs */
+.adjustment-inputs {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.adjustment-inputs>label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.adjustment-fields {
+    display: flex;
+    gap: 15px;
+}
+
+.adjustment-fields div {
+    flex: 1;
+}
+
+.adjustment-fields label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #7f8c8d;
+}
+
+.adjustment-fields input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Invoice table styling */
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.invoice-table th {
+    background-color: #f2f6f9;
+    padding: 10px;
+    text-align: left;
+    font-weight: 600;
+    color: #2c3e50;
+    border-bottom: 2px solid #ddd;
+}
+
+.invoice-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.invoice-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.invoice-table tfoot td {
+    padding: 10px;
+    font-weight: 500;
+}
+
+.invoice-table tfoot tr:first-child td {
+    border-top: 2px solid #ddd;
+}
+
+.invoice-table .total-row td {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1.1em;
+    border-top: 2px solid #3498db;
+    border-bottom: none;
+}
+
+.invoice-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.invoice-footer p {
+    margin: 6px 0;
+    font-size: 13px;
+    color: #555;
+}
+
+.notes {
+    margin-top: 15px;
+}
+
+.notes-list {
+    margin: 5px 0 0 20px;
+    padding-left: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.pdf-preview-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.close-button {
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.close-button:hover {
+    background-color: #7f8c8d;
+}
+
+.download-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #2980b9;
+}
+
+/* Add these styles to your App.css file */
+
+/* Styling for the vertical logo in the PDF preview */
+.acutus-vertical-logo {
+    background-color: #003366;
+    /* Dark blue color */
+    color: white;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 20px 5px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Update the PDF container to match the letterhead style */
+.pdf-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Create a vertical bar on the left for letterhead style */
+.pdf-container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    background-color: #003366;
+    /* Dark blue color */
+}
+
+/* Update company header layout */
+.company-header {
+    display: flex;
+    margin-left: 30px;
+    /* Make space for the vertical bar */
+    margin-bottom: 20px;
+}
+
+.company-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.company-info {
+    margin-left: 10px;
+}
+
+.invoice-title {
+    color: #003366;
+    text-align: center;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 5px;
+    margin-left: 30px;
+}
+
+/* Style for the table to match new letterhead style */
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.invoice-table th {
+    background-color: #f5f5f5;
+    color: #003366;
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.invoice-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.invoice-table .total-row {
+    font-weight: bold;
+    background-color: #f9f9f9;
+}
+
+/* Other necessary styles */
+.invoice-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    margin-left: 30px;
+}
+
+.invoice-meta {
+    flex: 2;
+}
+
+.supplier-info {
+    flex: 1;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.invoice-items {
+    margin-left: 30px;
+}
+
+.invoice-footer {
+    margin-top: 20px;
+    margin-left: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.notes {
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Buttons styling */
+.pdf-preview-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.close-button,
+.download-button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.close-button {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.download-button {
+    background-color: #003366;
+    color: white;
+    border: 1px solid #002244;
+}
+
+.download-button:hover {
+    background-color: #002244;
+}
+
+
+
+
+
+/* Invoice Generator Styles */
+.invoice-generator {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Loading indicator */
+.loading-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #4CAF50;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.modal-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.report-date-filters {
+    border: 1px solid #e5e5e5;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.report-date-filters h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.date-inputs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.date-input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px;
+}
+
+.date-input-group label {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.date-input-group input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.cancel-button {
+    padding: 8px 16px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+.cancel-button:hover {
+    background-color: #e5e5e5;
+}
+
+.submit-button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+/* PDF Preview styles */
+.pdf-preview {
+    width: 80%;
+    min-width: 800px;
+    max-width: 1000px;
+}
+
+.pdf-container {
+    border: 1px solid #ddd;
+    padding: 2rem;
+    margin: 1rem 0;
+    background-color: white;
+    position: relative;
+    min-height: 900px;
+    /* Aspect ratio similar to A4 */
+    aspect-ratio: 1 / 1.414;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Right stripes like in the image */
+.right-stripes {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #e8f5e8);
+    z-index: 1;
+}
+
+.right-stripes:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 5px;
+    height: 100%;
+    width: 1px;
+    background-color: rgba(76, 175, 80, 0.3);
+    box-shadow:
+        2.5px 0 0 rgba(76, 175, 80, 0.3),
+        5px 0 0 rgba(76, 175, 80, 0.3),
+        7.5px 0 0 rgba(76, 175, 80, 0.3),
+        10px 0 0 rgba(76, 175, 80, 0.3),
+        12.5px 0 0 rgba(76, 175, 80, 0.3);
+}
+
+/* Company logo and header styling */
+.company-logo-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-top: 1.5rem;
+}
+
+.acutus-logo {
+    text-align: center;
+    position: relative;
+
+}
+
+.logo-img {
+    height: 50px;
+    object-fit: contain;
+}
+
+
+.acutus-logo:after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(173, 235, 173, 0.6);
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    color: #4e8d4e;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.invoice-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 2rem 0;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.invoice-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.invoice-meta,
+.supplier-info {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.invoice-meta p,
+.supplier-info p {
+    margin: 0.4rem 0;
+}
+
+/* Billing details section */
+.invoice-items {
+    padding: 0 1rem;
+}
+
+.invoice-items h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+}
+
+.invoice-items h3:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 2rem;
+}
+
+.invoice-table th {
+    background-color: #f8f8f8;
+    font-weight: 500;
+    text-align: left;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.invoice-table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.invoice-table tfoot td {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+}
+
+.total-row td {
+    font-weight: 600;
+    border-top: 1px solid #ddd;
+    padding-top: 12px;
+}
+
+/* Footer sections */
+.invoice-footer {
+    padding: 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid #eee;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.invoice-footer p {
+    margin: 0.5rem 0;
+}
+
+.notes {
+    font-style: italic;
+    color: #777;
+    margin-top: 1rem;
+}
+
+.company-footer {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #777;
+    line-height: 1.4;
+}
+
+.company-footer p {
+    margin: 0.2rem 0;
+}
+
+/* PDF actions buttons */
+.pdf-preview-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.close-button {
+    padding: 10px 16px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.download-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.download-button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .pdf-preview {
+        min-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .invoice-details {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .pdf-container {
+        padding: 1.5rem;
+    }
+
+    .invoice-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Exchange Rate Information Styles */
+.exchange-rate-info {
+    margin: 15px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+}
+
+.exchange-rate-info h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+.exchange-rate-info p {
+    margin: 5px 0;
+}
+
+.error-message {
+    color: #dc3545;
+    font-style: italic;
+}
+
+.exchange-rate-error {
+    color: #dc3545;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Refresh Button Styles */
+.refresh-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.refresh-button:hover {
+    background-color: #218838;
+}
+
+.refresh-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Modal spinner for loading state */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #09f;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    text-align: center;
+}
